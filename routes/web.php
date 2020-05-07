@@ -20,3 +20,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('home');
 })->name('home');
+
+Route::get('/articoli', function () {
+    return view('articoli');
+})->name('articoli');
+
+Route::get('/articoli/{id}', function ($id) {
+    $data = [
+        'id' => $id
+    ];
+    return view('articolo' , $data);
+})->name('articoli.show');
